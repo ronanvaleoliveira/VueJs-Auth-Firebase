@@ -26,7 +26,9 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.email, this.senha)
         .then(
-          () => {
+          (user) => {
+            debugger; // eslint-disable-line no-debugger
+            alert("Sua conta foi cadastrada com sucesso: " + user.user.email);
             this.$router.replace("/");
           },
           (err) => {
