@@ -5,6 +5,7 @@ import firebase from 'firebase'
 
 Vue.config.productionTip = false
 
+//Initialize Firebase
 var firebaseConfig = {
   apiKey: "AIzaSyDhG17sDt57HJOH3oyUiwzMELC6PiL4NJ0",
   authDomain: "rvo-vue-auth-firebase.firebaseapp.com",
@@ -15,10 +16,18 @@ var firebaseConfig = {
   appId: "1:271079180487:web:968f450ecc86ca2efe16e2",
   measurementId: "G-6VD5FGF25D"
 };
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+let app = '';
+firebase.auth().onAuthStateChanged(() => {
+  if (!app) {
+    app = new Vue({
+      router,
+      render: h => h(App)
+    }).$mount('#app');
+  }
+});
 
 new Vue({
   router,

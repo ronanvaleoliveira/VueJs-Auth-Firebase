@@ -10,7 +10,9 @@
     </div>
     <p>
       Você não tem conta?
-      <router-link to="/registrar">Crie uma conta</router-link>
+      <span>
+        <router-link to="/registrar">crie uma conta</router-link>
+      </span>
     </p>
   </div>
 </template>
@@ -32,7 +34,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.senha)
         .then(
           (user) => {
-            this.$router.replace("/home");
+            this.$router.replace("home");
             alert("Bem vindo, " + user.user.email);
           },
           (err) => {
