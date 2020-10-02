@@ -32,7 +32,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.senha)
         .then(
           (user) => {
-            this.$router.replace("/");
+            this.$router.replace("/home");
             alert("Bem vindo, " + user.user.email);
           },
           (err) => {

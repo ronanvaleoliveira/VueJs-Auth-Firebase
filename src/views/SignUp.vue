@@ -29,7 +29,7 @@ export default {
           (user) => {
             debugger; // eslint-disable-line no-debugger
             alert("Sua conta foi cadastrada com sucesso: " + user.user.email);
-            this.$router.replace("/");
+            this.$router.replace("/home");
           },
           (err) => {
             alert("Aconteceu algo inesperado. " + err.message);
