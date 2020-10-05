@@ -3,8 +3,6 @@ Este projeto será desenvolvido em Vue.js utilizando o sistema de autenticação
 
 ## Recursos implementados
 * Rotas de navegação com "vue-router"
-
-## Próximos passos
 * Integração com Firebase
 
 
