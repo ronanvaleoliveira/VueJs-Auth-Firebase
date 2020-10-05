@@ -4,7 +4,8 @@ Este projeto desenvolvido em Vue.js utilizando o sistema de autenticação do Fi
 ## Recursos implementados
 * Vue.js v2.6.11
 * Vue Router v3.2.0
-* Firebase v7.22.0
+* Firebase v7.22.0 
+* 
 
 
 
