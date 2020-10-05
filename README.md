@@ -1,9 +1,10 @@
 # VueJs-Auth-Firebase
-Este projeto será desenvolvido em Vue.js utilizando o sistema de autenticação do Firebase.
+Este projeto desenvolvido em Vue.js utilizando o sistema de autenticação do Firebase.
 
 ## Recursos implementados
-* Rotas de navegação com "vue-router"
-* Integração com Firebase
+* Vue.js v2.6.11
+* Vue Router v3.2.0
+* Firebase v7.22.0
 
 
 
