@@ -5,8 +5,17 @@
     <br />
     <input type="password" placeholder="Senha" v-model="senha" />
     <br />
-    <div class="btn-login">
-      <button @click="login">Login</button>
+    <div class="btn-login" :disabled="loading">
+      <button @click="login">
+        <template v-if="loading">
+          Entrando ...
+          <i class="fa fa-spinner fa-spin"></i>
+        </template>
+        <template v-else>
+          Entrar
+          <i class="fa fa-sign-in-alt"></i>
+        </template>
+      </button>
     </div>
     <p>
       Você não tem conta?
@@ -23,13 +32,16 @@ export default {
   name: "login",
   data() {
     return {
+      loading: false,
       email: "",
       senha: "",
     };
   },
   methods: {
-    login() {
-      firebase
+    async login() {
+      debugger; // eslint-disable-line no-debugger
+      this.loading = true;
+      await firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.senha)
         .then(
@@ -41,6 +53,7 @@ export default {
             alert("Não foi possível realizar o login. " + err.message);
           }
         );
+      this.loading = false;
     },
   },
 };
